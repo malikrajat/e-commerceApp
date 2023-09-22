@@ -1,0 +1,51 @@
+{
+  "name": "product",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/product/src",
+  "prefix": "org",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/product/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/product/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/product/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/product/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/product/**/*.ts",
+          "libs/product/**/*.html",
+          "libs/product/package.json"
+        ]
+      }
+    }
+  }
+}
