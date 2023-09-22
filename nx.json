@@ -57,7 +57,8 @@
     },
     "@nx/angular:library": {
       "linter": "eslint",
-      "unitTestRunner": "jest"
+      "unitTestRunner": "jest",
+      "buildable": true
     },
     "@nx/angular:component": {
       "style": "scss"

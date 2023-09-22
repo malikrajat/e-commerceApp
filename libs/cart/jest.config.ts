@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'santosh-workspace',
+  displayName: 'cart',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/apps/santosh-workspace',
+  coverageDirectory: '../../coverage/libs/cart',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
