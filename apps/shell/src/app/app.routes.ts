@@ -10,7 +10,6 @@ export const appRoutes: Route[] = [
 		redirectTo: 'login',
 		pathMatch: 'full',
 	},
-	
 	{
 		path: 'product',
 		loadComponent: () => import('@org/product').then((m) => m.ProductComponent),
