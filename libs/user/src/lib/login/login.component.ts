@@ -59,12 +59,12 @@ export class LoginComponent {
 				(this.loginForm.get('password')?.value) as string
 			).subscribe({
 				next: (response: { token: string }): void => {
+					this.loginService.isLoggedIn = true;
 					console.log(response.token)
 					this.router.navigate(['/product'])
 						.then((response: boolean): void => {
-							// it is just to update old constroller like we have redirect successfully,
+							// it is just to update old controller like we have redirect successfully,
 							// we have room to do memory clean up at this location
-							//
 							console.log('you have been moved to other page', response)
 						})
 				},

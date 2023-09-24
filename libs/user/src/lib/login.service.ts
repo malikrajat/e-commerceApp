@@ -6,6 +6,7 @@ import { Observable } from "rxjs";
 	providedIn: 'root'
 })
 export class LoginService {
+	isLoggedIn = false;
 
 	constructor(
 		private readonly http: HttpClient
