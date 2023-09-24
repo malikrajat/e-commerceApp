@@ -11,32 +11,35 @@ import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { selectCategories } from '@org/category';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { MatMenuModule } from "@angular/material/menu";
 
 @Component({
-  selector: 'org-main-nav',
-  templateUrl: './main-nav.component.html',
-  styleUrls: ['./main-nav.component.css'],
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatListModule,
-    MatIconModule,
-    RouterLink,
-    RouterOutlet,
-  ],
+	selector: 'org-main-nav',
+	templateUrl: './main-nav.component.html',
+	styleUrls: ['./main-nav.component.css'],
+	standalone: true,
+	imports: [
+		CommonModule,
+		MatToolbarModule,
+		MatButtonModule,
+		MatSidenavModule,
+		MatListModule,
+		MatIconModule,
+		RouterLink,
+		RouterOutlet,
+		MatMenuModule
+	],
 })
 export class MainNavComponent {
-  categories$ = this.store.select(selectCategories);
-  private breakpointObserver = inject(BreakpointObserver);
-  isHandset$: Observable<boolean> = this.breakpointObserver
-    .observe(Breakpoints.Handset)
-    .pipe(
-      map((result) => result.matches),
-      shareReplay()
-    );
+	categories$ = this.store.select(selectCategories);
+	private breakpointObserver = inject(BreakpointObserver);
+	isHandset$: Observable<boolean> = this.breakpointObserver
+		.observe(Breakpoints.Handset)
+		.pipe(
+			map((result) => result.matches),
+			shareReplay()
+		);
 
-  constructor(private readonly store: Store) {}
+	constructor(private readonly store: Store) {
+	}
 }

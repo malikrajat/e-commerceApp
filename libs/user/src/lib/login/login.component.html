@@ -1,0 +1,61 @@
+<p>login works!</p>
+{{ search.value }}
+<input [formControl]="search" placeholder="search text" type="text"/>
+
+{{ loginForm.value | json }}
+{{ loginForm.valid }} Valid
+<br/>
+{{ loginForm.invalid }} Invalid
+<br/>
+{{ loginForm.status }} Status
+<br/>
+{{ loginForm.pristine }} Pristine
+<br/>
+{{ loginForm.dirty }} Dirty
+<br/>
+{{ loginForm.touched }} Touched
+<br/>
+{{ loginForm.untouched }} Untouched
+
+<form (ngSubmit)="login()" [formGroup]="loginForm" class="example-form">
+	<mat-form-field class="example-full-width">
+		<input
+			formControlName="username"
+			matInput
+			placeholder="username"
+			type="text"
+		/>
+		<mat-hint>Username is your email!</mat-hint>
+		<mat-error *ngIf="loginForm.hasError('email', 'username')">
+			The username should be a valid email address
+		</mat-error>
+		<mat-error *ngIf="loginForm.hasError('required', 'username')">
+			The username should not be empty.
+		</mat-error>
+	</mat-form-field>
+	<mat-form-field class="example-full-width">
+		<input
+			formControlName="password"
+			matInput
+			placeholder="password"
+			type="password"
+		/>
+		<mat-error *ngIf="loginForm.hasError('required', 'password')">
+			The username should not be empty.
+		</mat-error>
+		<mat-error *ngIf="loginForm.hasError('minlength', 'password')">
+			The password should be at least 8 characters long
+		</mat-error>
+		<mat-error *ngIf="loginForm.hasError('maxlength', 'password')">
+			The password should be at most 16 characters long
+		</mat-error>
+	</mat-form-field>
+	<button
+		[disabled]="loginForm.invalid"
+		color="primary"
+		mat-raised-button
+		type="submit"
+	>
+		Login
+	</button>
+</form>
