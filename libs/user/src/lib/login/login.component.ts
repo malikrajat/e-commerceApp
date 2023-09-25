@@ -28,7 +28,7 @@ export class LoginComponent {
 				nonNullable: true,
 				validators: [
 					Validators.required,
-					Validators.email
+					// Validators.email
 				]
 			}
 		),
