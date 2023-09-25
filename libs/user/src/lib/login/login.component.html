@@ -26,9 +26,9 @@
 			type="text"
 		/>
 		<mat-hint>Username is your email!</mat-hint>
-		<mat-error *ngIf="loginForm.hasError('email', 'username')">
-			The username should be a valid email address
-		</mat-error>
+		<!--		<mat-error *ngIf="loginForm.hasError('email', 'username')">-->
+		<!--			The username should be a valid email address-->
+		<!--		</mat-error>-->
 		<mat-error *ngIf="loginForm.hasError('required', 'username')">
 			The username should not be empty.
 		</mat-error>
