@@ -22,7 +22,8 @@ interface LoginInfo {
 export class LoginComponent {
 	search: FormControl<string> = new FormControl();
 	loginForm = this.fb.group({
-		username: new FormControl<string>(
+		username: [
+			// new FormControl<string>(
 			'',
 			{
 				nonNullable: true,
@@ -31,7 +32,8 @@ export class LoginComponent {
 					// Validators.email
 				]
 			}
-		),
+			// )
+		],
 		password: new FormControl<string>(
 			'',
 			{
