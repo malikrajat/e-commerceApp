@@ -45,7 +45,12 @@ export const appRoutes: Route[] = [
 		path: 'login',
 		title: 'login',
 		loadComponent: () => import('@org/user').then((m) => m.LoginComponent),
-		providers: [provideState(cartFeature), provideEffects({loadCart})],
+	},
+	{
+		path: 'profile',
+		title: 'Profile',
+		loadComponent: () => import('@org/user').then((m) => m.ProfileComponent),
+		canMatch: [loginGuard]
 	},
 	{
 		path: '**',
