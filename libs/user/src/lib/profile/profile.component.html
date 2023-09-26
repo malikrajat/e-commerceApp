@@ -1,1 +1,143 @@
 <p>profile works!</p>
+
+<!-- <pre
+  >{{ user() | json }}
+
+</pre>
+<br />
+{{ fullName() }} -->
+
+<button (click)="toggleEdit()" color="primary" mat-raised-button>
+	Enable/Disable Edit
+</button>
+
+<br/>
+{{ profileForm.value | json }}
+
+<form (ngSubmit)="updateProfile()" [formGroup]="profileForm" class="example-form">
+	<mat-form-field class="example-full-width">
+		<mat-label>Username</mat-label>
+		<input formControlName="id" matInput placeholder="Id"/>
+	</mat-form-field>
+	<div formGroupName="name">
+		<mat-form-field class="example-full-width">
+			<mat-label>First Name</mat-label>
+			<input formControlName="firstname" matInput placeholder="First Name"/>
+		</mat-form-field>
+		<mat-form-field class="example-full-width">
+			<input formControlName="lastname" matInput placeholder="Last Name"/>
+		</mat-form-field>
+	</div>
+	<mat-form-field class="example-full-width">
+		<input formControlName="email" matInput placeholder="Email"/>
+	</mat-form-field>
+	<mat-form-field class="example-full-width">
+		<input formControlName="phone" matInput placeholder="Phone"/>
+	</mat-form-field>
+	<div formGroupName="address">
+		<mat-form-field class="example-full-width">
+			<input formControlName="city" matInput placeholder="City"/>
+		</mat-form-field>
+		<mat-form-field class="example-full-width">
+			<input formControlName="street" matInput placeholder="Street"/>
+		</mat-form-field>
+		<mat-form-field class="example-full-width">
+			<input formControlName="zipcode" matInput placeholder="Zip Code"/>
+		</mat-form-field>
+		<mat-form-field class="example-full-width">
+			<input
+				formControlName="number"
+				matInput
+				placeholder="Number"
+				type="number"
+			/>
+		</mat-form-field>
+		<div formGroupName="geolocation">
+			<mat-form-field>
+				<input formControlName="lat" matInput placeholder="Lat" type="number"/>
+			</mat-form-field>
+			<mat-form-field class="example-full-width">
+				<input
+					formControlName="long"
+					matInput
+					placeholder="Lng"
+					type="number"
+				/>
+			</mat-form-field>
+		</div>
+	</div>
+	<!-- <button
+		mat-raised-button
+		color="primary"
+		type="button"
+		(click)="addControl()"
+	>
+		Add Address
+	</button>
+		<button
+		[disabled]="addresses.controls.length === 1"
+		mat-raised-button
+		color="primary"
+		type="button"
+		(click)="resetAddress()"
+	>
+		Reset Address
+	</button> -->
+	<!-- <div formArrayName="address">
+		<div *ngFor="let address of addresses.controls; let index = index">
+			<div [formGroupName]="index">
+				<mat-form-field class="example-full-width">
+					<input matInput placeholder="City" formControlName="city" />
+				</mat-form-field>
+				<mat-form-field class="example-full-width">
+					<input matInput placeholder="Street" formControlName="street" />
+				</mat-form-field>
+				<mat-form-field class="example-full-width">
+					<input matInput placeholder="Zip Code" formControlName="zipcode" />
+				</mat-form-field>
+				<mat-form-field class="example-full-width">
+					<input
+						matInput
+						type="number"
+						placeholder="Number"
+						formControlName="number"
+					/>
+				</mat-form-field>
+				<div formGroupName="geolocation">
+					<mat-form-field>
+						<input
+							matInput
+							type="number"
+							placeholder="Lat"
+							formControlName="lat"
+						/>
+					</mat-form-field>
+					<mat-form-field class="example-full-width">
+						<input
+							matInput
+							type="number"
+							placeholder="Lng"
+							formControlName="long"
+						/>
+					</mat-form-field>
+				</div>
+			</div>
+			<button
+				mat-raised-button
+				[disabled]="index< 1"
+				color="warn"
+				type="button"
+				(click)="removeAddress(index)">
+				Delete Address
+		</button>
+		</div>
+	</div> -->
+	<button
+		[disabled]="profileForm.dirty && profileForm.invalid"
+		color="primary"
+		mat-raised-button
+		type="submit"
+	>
+		Update Profile
+	</button>
+</form>
