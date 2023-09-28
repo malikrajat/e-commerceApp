@@ -1,4 +1,4 @@
-import { Component, computed } from '@angular/core';
+import { Component, computed, OnInit } from '@angular/core';
 import { JsonPipe } from '@angular/common';
 import { UserService } from "../user.service";
 import { toSignal } from "@angular/core/rxjs-interop";
@@ -20,7 +20,7 @@ import { MatInputModule } from "@angular/material/input";
 	templateUrl: './profile.component.html',
 	styleUrls: ['./profile.component.scss'],
 })
-export class ProfileComponent {
+export class ProfileComponent implements OnInit {
 	// user$ = this.userService.getUser();
 	// user: WritableSignal<any> = signal({});
 	// user: Signal<User | undefined> = toSignal(this.userService.getUser());

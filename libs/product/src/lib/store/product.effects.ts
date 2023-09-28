@@ -1,9 +1,10 @@
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { inject } from "@angular/core";
 import { catchError, exhaustMap, map, of } from "rxjs";
-import { Product, productActions } from "./product.action";
+import { productActions } from "./product.action";
 import { ProductService } from "../product.service";
 import { share } from "rxjs/operators";
+import { Product } from "./product";
 
 export const loadProductsByCategory = createEffect(
 	(actions$ = inject(Actions), productService = inject(ProductService)) => {
