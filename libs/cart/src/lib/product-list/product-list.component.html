@@ -1,1 +1,66 @@
-<p>product-list works!</p>
+<table [dataSource]="products" class="mat-elevation-z8" mat-table>
+	<ng-container matColumnDef="title">
+		<th *matHeaderCellDef mat-header-cell>Product Name</th>
+		<td *matCellDef="let element" mat-cell>{{ element.title }}</td>
+	</ng-container>
+
+	<ng-container matColumnDef="price">
+		<th *matHeaderCellDef mat-header-cell>Price</th>
+		<td *matCellDef="let element" mat-cell>{{ element.price }}</td>
+	</ng-container>
+
+	<ng-container matColumnDef="quantity">
+		<th *matHeaderCellDef mat-header-cell>quantity</th>
+		<td *matCellDef="let element" mat-cell>
+			<button
+				aria-label="Example icon button with a home icon"
+				class="icon-button"
+				color="primary"
+				mat-icon-button
+			>
+				<mat-icon>remove</mat-icon>
+			</button
+			>
+			{{ element.quantity }}
+
+
+			<button
+				aria-label="Example icon button with a home icon"
+				class="icon-button"
+				color="primary"
+				mat-icon-button
+			>
+				<mat-icon>add</mat-icon>
+			</button>
+		</td>
+	</ng-container>
+
+	<ng-container matColumnDef="category">
+		<th *matHeaderCellDef mat-header-cell>Category</th>
+		<td *matCellDef="let element" mat-cell>{{ element.category }}</td>
+	</ng-container>
+
+	<ng-container matColumnDef="total_price">
+		<th *matHeaderCellDef mat-header-cell>Total Price</th>
+		<td *matCellDef="let element" mat-cell>
+			{{ element.price * element.quantity }}
+		</td>
+	</ng-container>
+
+	<ng-container matColumnDef="actions">
+		<th *matHeaderCellDef mat-header-cell>Delete Product</th>
+		<td *matCellDef="let element" mat-cell>
+			<button
+				(click)="delete(element)"
+				aria-label="Delete Product"
+				class="icon-button"
+				mat-icon-button
+			>
+				<mat-icon>delete</mat-icon>
+			</button>
+		</td>
+	</ng-container>
+
+	<tr *matHeaderRowDef="columnsToDisplay" mat-header-row></tr>
+	<tr *matRowDef="let row; columns: columnsToDisplay" mat-row></tr>
+</table>

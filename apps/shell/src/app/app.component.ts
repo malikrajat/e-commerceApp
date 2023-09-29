@@ -7,27 +7,28 @@ import { Store } from '@ngrx/store';
 import { getCategoriesActions } from '@org/category';
 
 @Component({
-  standalone: true,
-  imports: [
-    NxWelcomeComponent,
-    RouterModule,
-    MainNavComponent,
-    AsyncPipe,
-    JsonPipe,
-  ],
-  selector: 'org-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+	standalone: true,
+	imports: [
+		NxWelcomeComponent,
+		RouterModule,
+		MainNavComponent,
+		AsyncPipe,
+		JsonPipe,
+	],
+	selector: 'org-root',
+	templateUrl: './app.component.html',
+	styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'santosh-workspace';
+	title = 'santosh-workspace';
 
-  // store$: Observable<string[]> = inject(Store);
-  // categories$ = this.store.select(selectCategories)
+	// store$: Observable<string[]> = inject(Store);
+	// categories$ = this.store.select(selectCategories)
 
-  constructor(private readonly store: Store) {}
+	constructor(private readonly store: Store) {
+	}
 
-  ngOnInit() {
-    this.store.dispatch(getCategoriesActions());
-  }
+	ngOnInit() {
+		this.store.dispatch(getCategoriesActions());
+	}
 }

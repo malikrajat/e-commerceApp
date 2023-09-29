@@ -4,16 +4,20 @@ import { Observable } from "rxjs";
 import { Cart } from "./store/cart.action";
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class CartService {
 
-  constructor(
-    private readonly http: HttpClient
-  ) {
-  }
+	constructor(
+		private readonly http: HttpClient
+	) {
+	}
 
-  getCart(cartId: number): Observable<Cart[]> {
-    return this.http.get<Cart[]>(`https://fakestoreapi.com/carts/${cartId}`);
-  }
+	getCart(cartId: number): Observable<Cart[]> {
+		return this.http.get<Cart[]>(`https://fakestoreapi.com/carts/${cartId}`);
+	}
+
+	getCartById(id: number) {
+		return this.http.get<Cart>(`https://fakestoreapi.com/carts/${id}`);
+	}
 }
