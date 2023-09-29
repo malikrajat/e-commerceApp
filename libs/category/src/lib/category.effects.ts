@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
-import { categoryActionsFailure, categoryActionsSuccess, CategoryService, getCategoriesActions } from "@org/category";
+import { categoryActionsFailure, categoryActionsSuccess, getCategoriesActions } from './category.action';
+import { CategoryService } from './category.service';
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { catchError, map, mergeMap, share } from 'rxjs/operators'
 import { of } from "rxjs";
