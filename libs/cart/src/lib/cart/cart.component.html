@@ -1,7 +1,7 @@
-<!-- <p>cart works!</p>
+<p>cart works!</p>
 
 {{cart$ | async | json }}
- -->
+
 
 <ng-container *ngIf="cart$ | async as cart">
 	<div>Name: {{ cart?.user?.name?.firstname }} {{ cart?.user?.name?.lastname }}</div>
