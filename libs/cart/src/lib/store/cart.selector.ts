@@ -31,6 +31,7 @@ export const userCartSelector = createSelector(
 	userFeature.selectUser,
 	productFeature.selectProducts,
 	(cart, user, products) => {
+		console.log(` 🚀 👍 👏 ~File: cart.selector.ts ~ at line 34:`, cart, user, products, `cart, user, products`);
 		if (cart && user) {
 			let newProduct: Product[] = [];
 			const cartproduct = cart.products
