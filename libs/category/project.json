@@ -1,51 +1,57 @@
 {
-  "name": "category",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/category/src",
-  "prefix": "org",
-  "tags": [],
-  "projectType": "library",
-  "targets": {
-    "build": {
-      "executor": "@nx/angular:ng-packagr-lite",
-      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
-      "options": {
-        "project": "libs/category/ng-package.json"
-      },
-      "configurations": {
-        "production": {
-          "tsConfig": "libs/category/tsconfig.lib.prod.json"
-        },
-        "development": {
-          "tsConfig": "libs/category/tsconfig.lib.json"
-        }
-      },
-      "defaultConfiguration": "production"
-    },
-    "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-      "options": {
-        "jestConfig": "libs/category/jest.config.ts",
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
-      }
-    },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": [
-          "libs/category/**/*.ts",
-          "libs/category/**/*.html",
-          "libs/category/package.json"
-        ]
-      }
-    }
-  }
+	"name": "category",
+	"$schema": "../../node_modules/nx/schemas/project-schema.json",
+	"sourceRoot": "libs/category/src",
+	"prefix": "org",
+	"tags": [],
+	"projectType": "library",
+	"targets": {
+		"build": {
+			"executor": "@nx/angular:ng-packagr-lite",
+			"outputs": [
+				"{workspaceRoot}/dist/{projectRoot}"
+			],
+			"options": {
+				"project": "libs/category/ng-package.json"
+			},
+			"configurations": {
+				"production": {
+					"tsConfig": "libs/category/tsconfig.lib.prod.json"
+				},
+				"development": {
+					"tsConfig": "libs/category/tsconfig.lib.json"
+				}
+			},
+			"defaultConfiguration": "production"
+		},
+		"test": {
+			"executor": "@nx/jest:jest",
+			"outputs": [
+				"{workspaceRoot}/coverage/{projectRoot}"
+			],
+			"options": {
+				"jestConfig": "libs/category/jest.config.ts",
+				"passWithNoTests": true
+			},
+			"configurations": {
+				"ci": {
+					"ci": true,
+					"codeCoverage": true
+				}
+			}
+		},
+		"lint": {
+			"executor": "@nx/linter:eslint",
+			"outputs": [
+				"{options.outputFile}"
+			],
+			"options": {
+				"lintFilePatterns": [
+					"libs/category/**/*.ts",
+					"libs/category/**/*.html",
+					"libs/category/package.json"
+				]
+			}
+		}
+	}
 }
