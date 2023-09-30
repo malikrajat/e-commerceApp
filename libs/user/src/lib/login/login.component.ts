@@ -6,6 +6,9 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { LoginService } from "../login.service";
 import { Router } from "@angular/router";
+import { cartActions } from "@org/cart";
+import { userActions } from "../store/user.action";
+import { Store } from "@ngrx/store";
 
 interface LoginInfo {
 	username: string,
@@ -50,7 +53,8 @@ export class LoginComponent {
 	constructor(
 		private readonly fb: FormBuilder,
 		private readonly loginService: LoginService,
-		private readonly router: Router
+		private readonly router: Router,
+		private store: Store,
 	) {
 	}
 
@@ -62,6 +66,8 @@ export class LoginComponent {
 			).subscribe({
 				next: (response: { token: string }): void => {
 					this.loginService.isLoggedIn = true;
+					this.store.dispatch(userActions.loadUserProfile({id: 2}));
+					this.store.dispatch(cartActions.loadCartById({id: 3}));
 					console.log(response.token)
 					this.router.navigate(['/product'])
 						.then((response: boolean): void => {
