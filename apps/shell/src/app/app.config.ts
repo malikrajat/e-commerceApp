@@ -7,6 +7,7 @@ import { provideEffects } from '@ngrx/effects';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { CategoryEffects, categoryFeature } from '@org/category';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { loadUserProfile, userFeature } from "@org/user";
 
 export const appConfig: ApplicationConfig = {
 	providers: [
@@ -22,7 +23,8 @@ export const appConfig: ApplicationConfig = {
 		provideAnimations(),
 		provideStore(),
 		provideState(categoryFeature),
-		provideEffects([CategoryEffects]),
+		provideState(userFeature),
+		provideEffects([CategoryEffects, {loadUserProfile}]),
 		provideStoreDevtools({maxAge: 25, logOnly: !isDevMode()}),
 	],
 };
