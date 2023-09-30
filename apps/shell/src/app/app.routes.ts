@@ -1,8 +1,8 @@
 import { Route } from '@angular/router';
 import { provideState } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
-import { loadProducts, loadProductsByCategory, productFeature, } from '@org/product';
-import { cartFeature, loadCart } from '@org/cart';
+import { loadProducts, loadProductsByCategory, productFeature } from '@org/product';
+import { cartFeature, loadCart, loadCartbyId } from '@org/cart';
 import { loginGuard } from "@org/user";
 
 export const appRoutes: Route[] = [
@@ -16,8 +16,9 @@ export const appRoutes: Route[] = [
 		loadComponent: () => import('@org/product').then((m) => m.ProductComponent),
 		title: 'product',
 		providers: [
+			provideState(cartFeature),
 			provideState(productFeature),
-			provideEffects({loadProducts, loadProductsByCategory}),
+			provideEffects({loadProducts}),
 		],
 		canMatch: [loginGuard]
 	},
@@ -38,7 +39,7 @@ export const appRoutes: Route[] = [
 		path: 'cart',
 		title: 'cart',
 		loadComponent: () => import('@org/cart').then((m) => m.CartComponent),
-		providers: [provideState(cartFeature), provideEffects({loadCart})],
+		providers: [provideState(cartFeature), provideEffects({loadCart, loadCartbyId})],
 		canMatch: [loginGuard]
 	},
 	{
