@@ -1,7 +1,7 @@
 import { createFeature, createFeatureSelector, createSelector, } from '@ngrx/store';
 import { cartReducer, CartState } from "./cart.reducer";
-import { Product, productFeature } from "@org/product";
-import { userFeature } from "@org/user";
+// import { userFeature } from "@org/user";
+import { Product, productFeature, userFeature } from "@org/common/store";
 
 const cartFeatureKey = 'cart';
 
@@ -31,7 +31,6 @@ export const userCartSelector = createSelector(
 	userFeature.selectUser,
 	productFeature.selectProducts,
 	(cart, user, products) => {
-		console.log(` 🚀 👍 👏 ~File: cart.selector.ts ~ at line 34:`, cart, user, products, `cart, user, products`);
 		if (cart && user) {
 			let newProduct: Product[] = [];
 			const cartproduct = cart.products

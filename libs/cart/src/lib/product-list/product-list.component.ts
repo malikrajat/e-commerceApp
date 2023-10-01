@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 
 import { MatIconModule } from '@angular/material/icon';
-import { Product } from "@org/product";
+// import { Product } from "@org/product";
 import { MatButtonModule } from "@angular/material/button";
+import { Product } from "@org/common/store";
 
 @Component({
 	selector: 'org-product-list',

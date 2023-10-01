@@ -1,11 +1,12 @@
 import { Component, computed, OnInit } from '@angular/core';
 import { JsonPipe } from '@angular/common';
-import { UserService } from "../user.service";
+// import { UserService } from "../../../../common/store/src/lib/user/user.service";
 import { toSignal } from "@angular/core/rxjs-interop";
 import { FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 import { MatButtonModule } from "@angular/material/button";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
+import { UserService } from "@org/common/store";
 
 @Component({
 	selector: 'org-profile',

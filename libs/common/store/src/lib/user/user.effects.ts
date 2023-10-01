@@ -2,7 +2,7 @@ import { inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { userActions } from './user.action';
 import { catchError, exhaustMap, map, of } from 'rxjs';
-import { UserService } from "../user.service";
+import { UserService } from "./user.service";
 
 
 export const loadUserProfile = createEffect(

@@ -4,11 +4,12 @@ import { MatInputModule } from "@angular/material/input";
 import { AsyncPipe, JsonPipe, NgIf } from "@angular/common";
 import { MatButtonModule } from "@angular/material/button";
 import { MatFormFieldModule } from "@angular/material/form-field";
-import { LoginService } from "../login.service";
+import { LoginService } from "../service/login.service";
 import { Router } from "@angular/router";
-import { cartActions } from "@org/cart";
-import { userActions } from "../store/user.action";
+// import { cartActions } from "@org/cart";
+// import { userActions } from "../store/user.action";
 import { Store } from "@ngrx/store";
+import { cartActions, userActions } from "@org/common/store";
 
 interface LoginInfo {
 	username: string,

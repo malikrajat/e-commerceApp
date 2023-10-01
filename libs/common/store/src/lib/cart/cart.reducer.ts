@@ -43,7 +43,6 @@ export const cartReducer = createReducer(
 		error: action.error
 	})),
 	on(cartActions.addProductToCart, (state, action) => {
-		console.log(` 🚀 👍 👏 ~File: cart.reducer.ts ~ at line 46:`, state, `state`);
 		let product = [];
 		if (
 			state.currentCart.products.filter(

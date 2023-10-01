@@ -1,5 +1,7 @@
-import { User, userActions } from "@org/user";
+// import { User, userActions } from "@org/user";
 import { createFeature, createReducer, on } from "@ngrx/store";
+import { User } from "./user.interface";
+import { userActions } from "./user.action";
 
 
 export interface UserState {

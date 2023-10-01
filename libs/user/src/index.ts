@@ -1,11 +1,11 @@
 export * from './lib/user/user.component';
 export * from './lib/login/login.component';
 export * from './lib/login.guard';
-export * from './lib/user.interface';
-export * from './lib/store/user.action';
-export * from './lib/store/user.effects';
+// export * from '../../common/store/src/lib/user/user.interface';
+// export * from '../../common/store/src/lib/user/user.action';
+// export * from '../../common/store/src/lib/user/user.effects';
 // export * from './lib/store/user.state';
-export * from './lib/store/user.reducer';
-export * from './lib/user.service';
+// export * from '../../common/store/src/lib/user/user.reducer';
+// export * from '../../common/store/src/lib/user/user.service';
 
 export * from './lib/profile/profile.component';

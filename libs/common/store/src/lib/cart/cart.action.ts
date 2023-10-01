@@ -1,6 +1,6 @@
 import { createActionGroup, props } from "@ngrx/store";
-import { Product } from "@org/product";
-import { User } from "@org/user";
+// import { User } from "@org/user";
+import { Product, User } from "@org/common/store";
 
 export interface CartProduct {
 	productId: number;

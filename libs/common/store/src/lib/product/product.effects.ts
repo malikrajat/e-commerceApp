@@ -2,7 +2,7 @@ import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { inject } from "@angular/core";
 import { catchError, exhaustMap, map, of } from "rxjs";
 import { productActions } from "./product.action";
-import { ProductService } from "../product.service";
+import { ProductService } from "./product.service";
 import { share } from "rxjs/operators";
 import { Product } from "./product";
 
