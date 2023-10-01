@@ -1,9 +1,17 @@
 import { Route } from '@angular/router';
 import { provideState } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
-import { loadProducts, loadProductsByCategory, productFeature } from '@org/product';
-import { cartFeature, loadCart, loadCartbyId } from '@org/cart';
+// import { loadProducts, loadProductsByCategory, productFeature } from '@org/product';
+// import { cartFeature, loadCart, loadCartbyId } from '@org/cart';
 import { loginGuard } from "@org/user";
+import {
+	cartFeature,
+	loadCart,
+	loadCartbyId,
+	loadProducts,
+	loadProductsByCategory,
+	productFeature
+} from "@org/common/store";
 
 export const appRoutes: Route[] = [
 	{
