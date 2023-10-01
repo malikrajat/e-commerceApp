@@ -24,6 +24,9 @@
 			"@org/category": [
 				"libs/category/src/index.ts"
 			],
+			"@org/common/store": [
+				"libs/common/store/src/index.ts"
+			],
 			"@org/home": [
 				"libs/home/src/index.ts"
 			],
