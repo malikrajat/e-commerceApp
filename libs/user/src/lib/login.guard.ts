@@ -1,5 +1,5 @@
 import { CanMatchFn, Router } from "@angular/router";
-import { LoginService } from "./login.service";
+import { LoginService } from "./service/login.service";
 import { inject } from "@angular/core";
 
 export const loginGuard: CanMatchFn = (route, state) => {
