@@ -51,10 +51,11 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { Store } from '@ngrx/store';
-import { productActions } from "../store/product.action";
-import { productFeature } from "../store/product.reducer";
-import { Product } from "../store/product";
-import { cartActions } from "@org/cart";
+import { cartActions, Product, productActions, productFeature } from "@org/common/store";
+// import { productActions } from "../store/product.action";
+// import { productFeature } from "../store/product.reducer";
+// import { Product } from "../store/product";
+// import { cartActions } from "@org/cart";
 
 
 @Component({
