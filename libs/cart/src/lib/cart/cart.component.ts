@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AsyncPipe, JsonPipe, NgForOf, NgIf } from '@angular/common';
 import { Store } from "@ngrx/store";
-// import { userCartSelector } from "../store/cart.selector";
 import { ProductListComponent } from "../product-list/product-list.component";
 import { Product, userCartSelector } from "@org/common/store";
-
-// import { Product } from "@org/product";
 
 @Component({
 	selector: 'org-cart',
