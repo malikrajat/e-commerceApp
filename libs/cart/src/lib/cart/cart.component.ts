@@ -21,6 +21,7 @@ export class CartComponent implements OnInit {
 
 	ngOnInit(): void {
 		// this.store.dispatch(cartActions.loadCart({cartId: 1}))
+		console.log('log')
 	}
 
 	delete(product: Product) {
