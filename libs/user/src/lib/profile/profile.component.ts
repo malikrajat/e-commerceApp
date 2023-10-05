@@ -68,6 +68,7 @@ export class ProfileComponent implements OnInit {
 	}
 
 	prepareAddressForm() {
+		console.log(` 🚀 👍 👏 ~File: profile.component.ts ~ at line 71:`, this.fb, `this.fb`);
 		return this.fb.group({
 			city: ['', Validators.required],
 			street: '',
